@@ -1,5 +1,4 @@
-# List Network interface
-import os
+# commands/list_interfaces.py
 import subprocess
 import json
 from logger import NetmancerLogger
@@ -29,5 +28,4 @@ def get_network_interfaces():
         return json.dumps(interfaces)
     except Exception as e:
         logger.log_error(f"Error listing network interfaces: {e}")
-        return None
-
+        return {"error": f"Error listing network interfaces: {e}"}
