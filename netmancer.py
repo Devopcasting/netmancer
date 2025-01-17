@@ -5,11 +5,11 @@ from commands.scan_wireless_devices import scan_wireless_devices
 
 def help_menu():
     print("Network Configuration Utility")
-    print("Usage: python3 network_config.py [options]")
+    print("Usage: python3 netmancer.py [options]")
     print("Options:")
     print("  --list-interfaces  List available network interfaces")
     print("  --scan-wireless-devices   Scan for wireless devices")
-    print("  --help                     Display this help menu")
+    print("  --H                     Display this help menu")
 
 def main():
     parser = argparse.ArgumentParser(description="Network Configuration Utility", allow_abbrev=False)
@@ -17,7 +17,7 @@ def main():
     # Argument for listing network interfaces
     parser.add_argument("--list-interfaces", action="store_true", help="List available network interfaces")
     # Argument for displaying help menu
-    parser.add_argument("--h", action="store_true", help="Display help menu")
+    parser.add_argument("--H", action="store_true", help="Display help menu")
     # Argument for scanning for wireless devices
     parser.add_argument("--scan-wireless-devices", action="store_true", help="Scan for wireless devices")
 
@@ -35,7 +35,7 @@ def main():
             devices = scan_wireless_devices()
             if devices:
                 print(devices)
-        elif args.h:
+        elif args.H:
             # Display the help menu
             help_menu()
 
